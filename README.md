@@ -54,3 +54,10 @@ YubinBangoが有効になる条件は下記の通りとなります。
      例1: 〒\<input type="text" class="p-postal-code" size="8" maxlength="8"\>  
      例2: 〒\<input type="text" class="p-postal-code" size="3" maxlength="3"\>\<input type="text" class="p-postal-code" size="4" maxlength="4"\>
 0. 住所欄のclass指定の中に、都道府県名(p-region)、市町村区(p-locality)、町域(p-street-address)、以降の住所(p-extended-address) がそれぞれ含まれていること
+
+## How to build
+
+```shell
+tsc --out yubinbango.js yubinbango.ts
+uglifyjs yubinbango.js -o yubinbango.min.js -c -m --source-map "root='',filename='./yubinbango.min.js'"
+```
